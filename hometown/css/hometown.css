@@ -65,6 +65,78 @@ section > h2 {
   padding-left: 20px;
 }
 
+/* ===== Grid 卡片墙 ===== */
+.scenery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.scenery-card,
+.food-card {
+  background: #fff;
+  border: 1px solid #e4e0d8;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.scenery-card:hover,
+.food-card:hover {
+  box-shadow: 0 6px 16px rgba(47, 111, 79, 0.15);
+  transform: translateY(-2px);
+}
+
+.scenery-card img,
+.food-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.scenery-card h3,
+.food-card h3 {
+  margin: 10px 12px 4px;
+  font-size: 17px;
+  color: #2f6f4f;
+}
+
+.scenery-card p,
+.food-card p {
+  margin: 0 12px 12px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== 媒体查询断点 ===== */
+/* 平板：≥640px 时美食区固定两列，hero 字号放大 */
+@media (min-width: 640px) {
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+
+/* 桌面：≥960px 时美食区三列，区块留白加大 */
+@media (min-width: 960px) {
+  .food-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  section {
+    padding: 8px 0 40px;
+  }
+}
+
 footer {
   text-align: center;
   color: #888;
