@@ -1,11 +1,10 @@
 * { box-sizing: border-box; }
 
 body {
-  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-family: "Microsoft YaHei", sans-serif;
   margin: 0;
-  color: #2b2b2b;
+  color: #333;
   background: #faf9f6;
-  line-height: 1.65;
 }
 
 .nav-wrap {
@@ -20,7 +19,6 @@ body {
 }
 
 .logo {
-  font-size: 20px;
   font-weight: 700;
   color: #2f6f4f;
   text-decoration: none;
@@ -32,108 +30,53 @@ body {
 }
 
 .main-nav a {
-  color: #44634f;
   text-decoration: none;
-}
-
-.hero {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 48px 16px;
-  text-align: center;
-}
-
-.hero h1 {
-  margin: 0 0 8px;
-  font-size: 34px;
   color: #2f6f4f;
 }
 
-section {
+section h2 {
+  max-width: 960px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+}
+
+.card-grid {
   max-width: 960px;
   margin: 0 auto;
-  padding: 8px 16px 32px;
-}
-
-section > h2 {
-  border-left: 4px solid #2f6f4f;
-  padding-left: 10px;
-}
-
-.tips-list {
-  margin: 0;
-  padding-left: 20px;
-}
-
-/* ===== Grid 卡片墙 ===== */
-.scenery-grid {
+  padding: 16px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
 
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.scenery-card,
-.food-card {
+.card {
   background: #fff;
-  border: 1px solid #e4e0d8;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 12px;
 }
 
-.scenery-card:hover,
-.food-card:hover {
-  box-shadow: 0 6px 16px rgba(47, 111, 79, 0.15);
-  transform: translateY(-2px);
-}
-
-.scenery-card img,
-.food-card img {
+.card img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 4px;
 }
 
-.scenery-card h3,
-.food-card h3 {
-  margin: 10px 12px 4px;
+.card h3 {
+  margin: 8px 0 4px;
   font-size: 17px;
-  color: #2f6f4f;
 }
 
-.scenery-card p,
-.food-card p {
-  margin: 0 12px 12px;
+.card p {
+  margin: 0;
   font-size: 14px;
   color: #555;
 }
 
-/* ===== 媒体查询断点 ===== */
-/* 平板：≥640px 时美食区固定两列，hero 字号放大 */
 @media (min-width: 640px) {
-  .food-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-}
-
-/* 桌面：≥960px 时美食区三列，区块留白加大 */
-@media (min-width: 960px) {
-  .food-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  section {
-    padding: 8px 0 40px;
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
